@@ -1,0 +1,38 @@
+{
+    "realtimeData": {
+        "params": {
+            "value": [
+                {
+                    "ZMG8982372HCCB76": {
+                        "energyDischargingTotal": 739.8,
+                        "powerExporting": 0,
+                        "energyExportingTotal": 1327.9,
+                        "energyDischarging": 8.13,
+                        "batteryCycletime": 62,
+                        "lastUpdate": "2024-10-22T19:46:52Z",
+                        "energyGenerating": 20.46,
+                        "energyAutoconsumingTotal": 1130.3,
+                        "energyImporting": 3.66,
+                        "energyCharging": 4.67,
+                        "powerImporting": 950,
+                        "energyChargingTotal": 807.0,
+                        "energyConsumingTotal": 2099.9,
+                        "energyAutoconsuming": 15.61,
+                        "powerConsuming": 950,
+                        "energyConsuming": 27.4,
+                        "powerGenerating": 0,
+                        "energyImportingTotal": 545.8,
+                        "energyExporting": 0.18,
+                        "batterySoC": 20,
+                        "thingFind": "2024-06-04T08:55:36Z",
+                        "powerAutoconsuming": 0,
+                        "powerCharging": 0,
+                        "energyGeneratingTotal": 3265.2,
+                        "powerDischarging": 0
+                    }
+                }
+            ]
+        },
+        "success": true
+    }
+}
