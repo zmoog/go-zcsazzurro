@@ -1,0 +1,9 @@
+{
+    "realtimeData": {
+        "command": "realtimeData",
+        "params": {
+            "thingKey": "ZMG8982372HCCB76",
+            "requiredValues": "*"
+        }
+    }
+}
