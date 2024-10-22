@@ -67,15 +67,6 @@ func (c *Client) FetchRealtimeData(thingID string) (RealtimeDataResponse, error)
 	}
 	defer resp.Body.Close()
 
-	// body, err := io.ReadAll(resp.Body)
-	// if err != nil {
-	// 	return RealtimeDataResponse{}, err
-	// }
-
-	// fmt.Println(string(body))
-
-	// return RealtimeDataResponse{}, nil
-
 	// Decode the response
 	var data RealtimeDataResponse
 	err = json.NewDecoder(resp.Body).Decode(&data)
