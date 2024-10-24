@@ -10,7 +10,7 @@ To get your API credentials, install the [Azzurro Operators](https://apps.apple.
 $ zcs azzurro fetch-realtime \
     --client-id "JohnDoe" \
     --api-auth "Zcs a0CHc2e9Y88h" \
-    --thing-id "ZMG8982372HCCB76"
+    --thing-key "ZMG8982372HCCB76"
 
 Power importing: 900.00
 Power exporting: 0.00
@@ -27,7 +27,7 @@ export ZCS_CLIENT_ID="JohnDoe"
 export ZCS_CLIENT_API_AUTH="Zcs a0CHc2e9Y88h"
 
 zcs azzurro fetch-realtime \
-    --thing-id "ZMG8982372HCCB76"
+    --thing-key "ZMG8982372HCCB76"
 ```
 
 Or the config file `~/.zcs`:
@@ -39,5 +39,5 @@ client_id: JohnDoe
 api_auth: "Zcs a0CHc2e9Y88h"
 
 zcs azzurro fetch-realtime \
-    --thing-id ZMG8982372HCCB76
+    --thing-key ZMG8982372HCCB76
 ```
