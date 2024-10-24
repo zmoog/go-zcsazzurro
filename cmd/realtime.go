@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/zmoog/zcs/azzurro"
@@ -37,18 +38,38 @@ var fetchRealtimeCmd = &cobra.Command{
 			return fmt.Errorf("failed to fetch realtime data: %t", data.RealtimeData.Success)
 		}
 
+		table := pterm.TableData{}
+
+		// Add the header row
+		table = append(table, []string{
+			"Power generating",
+			"Power consuming",
+			"Power importing",
+			"Power exporting",
+			"Power charging",
+			"Power discharging",
+			"Battery level",
+			"Last update",
+		})
+
+		// Add the data rows
 		for _, v := range data.RealtimeData.Params.Value {
 			for _, v := range v {
-				fmt.Printf("Power generating: %.2f\n", v.PowerGenerating)
-				fmt.Printf("Power consuming: %.2f\n", v.PowerConsuming)
-				fmt.Printf("Power importing: %.2f\n", v.PowerImporting)
-				fmt.Printf("Power exporting: %.2f\n", v.PowerExporting)
-				fmt.Printf("Power charging: %.2f\n", v.PowerCharging)
-				fmt.Printf("Power discharging: %.2f\n", v.PowerDischarging)
-				fmt.Printf("Battery level: %d%%\n", v.BatterySoC)
-				fmt.Printf("Last update: %s\n", v.LastUpdate)
+				table = append(table, []string{
+					fmt.Sprintf("%.2f", v.PowerGenerating),
+					fmt.Sprintf("%.2f", v.PowerConsuming),
+					fmt.Sprintf("%.2f", v.PowerImporting),
+					fmt.Sprintf("%.2f", v.PowerExporting),
+					fmt.Sprintf("%.2f", v.PowerCharging),
+					fmt.Sprintf("%.2f", v.PowerDischarging),
+					fmt.Sprintf("%d%%", v.BatterySoC),
+					v.LastUpdate.String(),
+				})
 			}
 		}
+
+		// Render the table
+		pterm.DefaultTable.WithHasHeader().WithData(table).Render()
 
 		return nil
 	},
